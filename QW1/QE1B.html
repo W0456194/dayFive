@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //convert all the strings to title caps in a string array -->
+        //anonoymous function
+        let strObj = {strK:'bonjour je suis un string'};
+
+        let titleCaseAnony = function (args) {
+            str = args.strK.toLowerCase().split(' ');
+            for (var i = 0; i < str.length; i++) {
+                str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+            }
+            console.log(str.join(' '));
+            }
+            titleCaseAnony(strObj);
+        //IIFE function
+        (function (argsT) {
+            strT = strObj.strK.toLowerCase().split(' ');
+            for (var i = 0; i < strT.length; i++) {
+                strT[i] = strT[i].charAt(0).toUpperCase() + strT[i].slice(1);
+            }
+            console.log(strT.join(' '));
+        })(strObj);
+    </script>
+</body>
+</html>
